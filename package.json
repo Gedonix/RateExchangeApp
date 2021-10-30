@@ -1,0 +1,70 @@
+{
+  "name": "rex",
+  "version": "1.0.0",
+  "description": "Rate Exchange App",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.24.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.0.1"
+  },
+  "author": {
+    "name" : "Gedonix",
+    "email": "07915061@mail.ru",
+    "url": "https://github.com/Gedonix"
+  },
+  "main": "electron/main.js",
+  "productName": "RateExchangeApp",
+  "homepage": "./",
+  "scripts": {
+    "start": "set BROWSER=none && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-dev": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
+    "build-electron": "robocopy electron build/electron /S",
+    "package": "electron-builder build --win  -c.extraMetadata.main=build/electron/main.js --publish never"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^15.3.0",
+    "electron-builder": "^22.13.1"
+  },
+  "build": {
+  "win" : {
+      "target": "portable"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "publish": {
+      "provider": "github",
+      "repo": "rate-exchange-react-electron-app",
+      "owner": "Gedonix"
+    }
+  }
+}
